@@ -6,15 +6,14 @@ import Project from "./content-components/Project";
 import Contact from "./content-components/Contact";
 const CategoryPage = () => {
   const pathname = usePathname();
-  const category = pathname.split("/")[2];
 
   return (
     <div className="mr-5 ml-5">
-      {category === "about" ? (
+      {pathname === "/about" ? (
         <About />
-      ) : category === "project" ? (
+      ) : pathname === "/project" ? (
         <Project />
-      ) : category === "contact" ? (
+      ) : pathname === "/contact" ? (
         <Contact />
       ) : (
         ""

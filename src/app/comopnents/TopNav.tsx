@@ -5,22 +5,22 @@ const TopNav = () => {
     <div className="link-container mt-20 mb-20">
       <ul>
         <li>
-          <Link className="nav-link" href="/main">
+          <Link className="nav-link" href="/">
             Home
           </Link>
         </li>
         <li>
-          <Link className="nav-link" href="/main/about">
+          <Link className="nav-link" href="/about">
             about
           </Link>
         </li>
         <li>
-          <Link className="nav-link" href="/main/project">
+          <Link className="nav-link" href="/project">
             project
           </Link>
         </li>
         <li>
-          <Link className="nav-link" href="/main/contact">
+          <Link className="nav-link" href="/contact">
             contact
           </Link>
         </li>

@@ -1,5 +1,4 @@
-import TopNav from "../../comopnents/TopNav";
-import "../../globals.css";
+import TopNav from "../comopnents/TopNav";
 export default function RootLayout({
   children,
 }: Readonly<{

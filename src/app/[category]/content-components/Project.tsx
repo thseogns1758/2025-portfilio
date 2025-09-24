@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "../../../data";
-import { ProjectType, ProjectItemType } from "../../../type";
+import { projects } from "../../data";
+import { ProjectType, ProjectItemType } from "../../type";
 import "./project-style.css";
 import ProjectModal from "./components/ProjectModal";
 import ProjectGrid from "./components/projectGrid";
