@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import About from "./content-components/About";
 import Project from "./content-components/Project";
 import Contact from "./content-components/Contact";
-const page = () => {
+const CategoryPage = () => {
   const pathname = usePathname();
   const category = pathname.split("/")[2];
 
@@ -23,4 +23,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CategoryPage;

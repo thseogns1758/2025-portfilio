@@ -1,7 +1,7 @@
 import Image from "next/image";
-import MainPage from "./home/page";
+import MainPage from "./main/page";
 import "./globals.css";
-export default function Home() {
+export default function Main() {
   return (
     <div className="">
       <main className="">

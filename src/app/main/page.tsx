@@ -11,11 +11,11 @@ const MainPage = () => {
       </section>
 
       <div className="main-nav">
-        <Link href="/home/about">About</Link>
+        <Link href="/main/about">About</Link>
         <span>·</span>
-        <Link href="/home/project">Project</Link>
+        <Link href="/main/project">Project</Link>
         <span>·</span>
-        <Link href="/home/contact">Contact</Link>
+        <Link href="/main/contact">Contact</Link>
       </div>
     </main>
   );
