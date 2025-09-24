@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color: rgb(255, 204, 192); /* 배경색 */
+  --text-color: rgb(80 40 30) /* 텍스트 기본 */
+  --point-color: rgb(0, 51, 102); /* 포인트 텍스트 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.link-container {
+ 
+}
+.link-container ul {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.link-container li {
+  list-style: none;
+}
+.link-container .nav-link {
+  color: var(--point-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+/* ㄴㄴㄴ */
+
+ 
+  
+  a {
+    text-decoration: none;
+    color: var(--point-color);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+  }
+  
+  section {
+    padding: 80px 20px;
+  }
+  
+ 
+  
