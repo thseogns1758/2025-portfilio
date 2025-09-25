@@ -34,16 +34,7 @@ export const sendEmail = async (
         message: "모든 필드를 입력해주세요",
       };
     }
-    console.log("환경변수 체크:");
-    console.log(
-      "GMAIL_USER:",
-      process.env.GMAIL_USER ? "설정됨" : "설정되지 않음"
-    );
-    console.log(
-      "GMAIL_APP_KEY:",
-      process.env.GMAIL_APP_KEY ? "설정됨" : "설정되지 않음",
-      process.env.GMAIL_APP_KEY
-    );
+
     await transporter.sendMail({
       from: process.env.GMAIL_USER, // 보내는 이메일
       to: "thseo1758@naver.com", // 받는 이메일
