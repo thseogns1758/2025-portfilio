@@ -2,6 +2,11 @@
 
 import nodemailer from "nodemailer";
 
+interface EmailState {
+  success: boolean;
+  message: string;
+}
+
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -12,7 +17,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export const sendEmail = async (prevState: any, formData: FormData) => {
+export const sendEmail = async (
+  prevState: EmailState | null,
+  formData: FormData
+) => {
   try {
     const name = formData.get("name");
     const email = formData.get("email");
