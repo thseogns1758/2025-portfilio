@@ -19,6 +19,12 @@ const Form = () => {
 
   return (
     <div>
+      <div>
+        <h1 className=" font-bold mb-6">
+          문의하기 <br />
+          (전달되는 메일의 경로는 thseo1758@naver.com입니다.)
+        </h1>
+      </div>
       <form action={handleSubmit}>
         <div className="flex flex-col gap-4">
           <div className="flex gap-2 h-[50px]">
