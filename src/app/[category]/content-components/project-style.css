@@ -7,3 +7,17 @@
   transform: translate(-5px, -5px);
   box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.2);
 }
+.accordion-modal {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-modal-open {
+  padding-left: 20px;
+  opacity: 1;
+}

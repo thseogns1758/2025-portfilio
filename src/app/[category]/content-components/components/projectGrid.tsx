@@ -64,12 +64,22 @@ const ProjectGrid = ({
                           "linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))",
                         color: "white",
                         width: "100%",
+                        height: 100,
                       }}
                     >
                       <Typography pb={1} fontSize={"1rem"}>
                         {project.title}
                       </Typography>
-                      <Typography fontSize={"0.8rem"}>
+                      <Typography
+                        fontSize={"0.8rem"}
+                        sx={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
                         {project.description}
                       </Typography>
                     </Box>

@@ -2,17 +2,35 @@
 
 import { useActionState } from "react";
 import { sendEmail } from "../../../../lib/action";
+import { useTransition } from "react";
 
 const Form = () => {
-  const [state, formAction] = useActionState(sendEmail, null);
+  const [state, formAction] = useActionState(sendEmail, {
+    success: false,
+    message: "",
+  });
+  const [isPending, startTransition] = useTransition();
+
+  const handleSubmit = (formData: FormData) => {
+    startTransition(() => {
+      formAction(formData);
+    });
+  };
 
   return (
     <div>
-      <form action={formAction}>
+      <form action={handleSubmit}>
         <div className="flex flex-col gap-4">
-          <div>
-            <label htmlFor="name">이름: </label>
+          <div className="flex gap-2 h-[50px]">
+            <label
+              htmlFor="name"
+              className="w-[100px]"
+              style={{ lineHeight: "50px" }}
+            >
+              이름
+            </label>
             <input
+              className="flex-1 p-2 border border-black rounded"
               type="text"
               id="name"
               name="name"
@@ -20,9 +38,16 @@ const Form = () => {
               required
             />
           </div>
-          <div>
-            <label htmlFor="email">이메일: </label>
+          <div className="flex gap-2 h-[50px]">
+            <label
+              htmlFor="email"
+              className="w-[100px]"
+              style={{ lineHeight: "50px" }}
+            >
+              이메일
+            </label>
             <input
+              className="flex-1 p-2 border border-black rounded"
               type="email"
               id="email"
               name="email"
@@ -30,20 +55,23 @@ const Form = () => {
               required
             />
           </div>
-          <div>
-            <label htmlFor="subject">문의 내용: </label>
+          <div className="flex gap-2">
+            <label htmlFor="subject" className="w-[100px] pt-2">
+              문의 내용
+            </label>
             <textarea
               placeholder="문의 내용"
               id="subject"
               name="subject"
+              className="flex-1 p-2 border border-black rounded"
               required
-              rows={5}
+              rows={4}
             />
           </div>
         </div>
 
         {/* 상태 메시지 표시 */}
-        {state?.message && (
+        {state && state.message && (
           <div
             className={`mt-4 p-3 rounded ${
               state.success
@@ -54,13 +82,16 @@ const Form = () => {
             {state.message}
           </div>
         )}
-
-        <button
-          type="submit"
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          전송
-        </button>
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            className="mt-4 px-4 py-2 text-white rounded disabled:opacity-50"
+            style={{ backgroundColor: "rgb(102, 51, 0)" }}
+            disabled={isPending}
+          >
+            {isPending ? "전송 중..." : "전송"}
+          </button>
+        </div>
       </form>
     </div>
   );

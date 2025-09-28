@@ -10,7 +10,8 @@ export const projects: ProjectType = [
         src: "https://placehold.co/600x400",
         alt: "alt",
         title: "타이틀",
-        description: "설명",
+        description:
+          "설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명",
       },
       {
         id: 2,
