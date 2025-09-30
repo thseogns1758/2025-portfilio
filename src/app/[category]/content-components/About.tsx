@@ -12,11 +12,11 @@ const About = () => {
     <div>
       <section className="max-w-3xl mx-auto px-6 py-16 text-center">
         <div className="flex flex-col items-center">
-          <div className="flex justify-center">
+          <div className="w-60 h-60 flex justify-center rounded-full overflow-hidden">
             <img
-              src="/profile.jpg"
+              src="/profile.jpeg"
               alt="Profile"
-              className="w-60 h-60 rounded-full shadow-lg object-cover"
+              className="w-full h-full shadow-lg object-cover object-[center_30%]"
             />
           </div>
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
