@@ -34,7 +34,7 @@ const About = () => {
             가독성을 고려한 개발을 지향합니다.
           </p>
         </div>
-        <div className="flex justify-center gap-4 mt-8">
+        <div className="grid grid-cols-5 gap-4 mt-8 justify-center">
           {techStack.map((tech) => (
             <Chip key={tech}>{tech}</Chip>
           ))}
