@@ -4,6 +4,8 @@ const About = () => {
   const techStack = [
     "React",
     "Next.js",
+    "TypeScript",
+    "React Native",
     "TailwindCSS",
     "MUI",
     "Styled-Components",
