@@ -32,7 +32,7 @@ const ProjectGrid = ({
         projects.map(({ year, list }) => (
           <Box key={year} m={2}>
             <Typography variant="h5" fontWeight="bold" mb={2}>
-              {year}
+              - {year} -
             </Typography>
             <Grid container spacing={4}>
               {list.map((project) => (
@@ -61,7 +61,7 @@ const ProjectGrid = ({
                         position: "absolute",
                         bottom: 0,
                         background:
-                          "linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))",
+                          "linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))",
                         color: "white",
                         width: "100%",
                         height: 100,

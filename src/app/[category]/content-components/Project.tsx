@@ -7,7 +7,7 @@ import "./project-style.css";
 import ProjectModal from "./components/ProjectModal";
 import ProjectGrid from "./components/projectGrid";
 import { Box } from "@mui/material";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import InsertLinkIcon from "@mui/icons-material/InsertLink";
 
 const Project = () => {
   const [selectedProject, setSelectedProject] =
@@ -70,14 +70,26 @@ const Project = () => {
                 paddingLeft: "20px",
                 color: "#4b2e2e",
                 "@media (max-width:950px)": {
-                  maxWidth: "100%", // 작은 화면에서는 전체 너비
-                  paddingLeft: 0, // 왼쪽 패딩 제거
-                  marginTop: "16px", // 이미지와 간격
+                  maxWidth: "100%",
+                  paddingLeft: 0,
+                  marginTop: "16px",
                 },
               }}
             >
-              <h2>{selectedProject.title}</h2>
-              <p>{selectedProject.description}</p>
+              <h2 className="project-title">
+                {selectedProject.title.toUpperCase()}
+              </h2>
+              <p className="project-description">
+                {selectedProject.description}
+              </p>
+
+              <a
+                className="project-link"
+                href={selectedProject.url}
+                target="_blank"
+              >
+                링크로 이동하기 <InsertLinkIcon />
+              </a>
             </Box>
           </Box>
         )}

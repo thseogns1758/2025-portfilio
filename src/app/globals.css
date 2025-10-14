@@ -4,6 +4,7 @@
   --bg-color: rgb(255, 204, 192); /* 배경색 */
   --text-color: rgb(80 40 30) /* 텍스트 기본 */
   --point-color: rgb(0, 51, 102); /* 포인트 텍스트 */
+  --link-back-color: #4b2e2e; /* 링크 배경색 */
 }
 
 .main {
