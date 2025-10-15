@@ -25,8 +25,9 @@ export const sendEmail = async (
     const name = formData.get("name");
     const email = formData.get("email");
     const subject = formData.get("subject");
+    const sendEmail = formData.get("sendEmail");
 
-    console.log(name, email, subject);
+    console.log(name, email, subject, sendEmail);
 
     if (!name || !email || !subject) {
       return {
@@ -37,7 +38,7 @@ export const sendEmail = async (
 
     await transporter.sendMail({
       from: process.env.GMAIL_USER, // 보내는 이메일
-      to: "thseo1758@naver.com", // 받는 이메일
+      to: sendEmail ? String(sendEmail) : "thseo1758@naver.com", // 받는 이메일 보안상 문제가 될 수 있음으로 활성화 하지않음
       subject: `문의하기: ${name}(${email})`,
       html: `<h1>포트폴리오에서 전달된 내용입니다.</h1>
       <p><strong>이름:</strong> ${name}</p>

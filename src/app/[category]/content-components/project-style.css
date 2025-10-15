@@ -15,6 +15,7 @@
 }
 .project-description {
   font-size: 1rem;
+  white-space: pre-line;
 }
 
 .project-link {
@@ -26,4 +27,21 @@
   justify-content: space-between;
   background-color: var(--link-back-color);
   color: white;
+}
+.project-description-container {
+  overflow-y: scroll;
+  max-height: 200px;
+}
+.project-modal-item {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffebeb;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
 }

@@ -1,5 +1,9 @@
 @import "tailwindcss";
-
+* {
+  box-sizing: border-box;
+  
+  font-family: "Sansation", sans-serif;
+}
 :root {
   --bg-color: rgb(255, 204, 192); /* 배경색 */
   --text-color: rgb(80 40 30) /* 텍스트 기본 */

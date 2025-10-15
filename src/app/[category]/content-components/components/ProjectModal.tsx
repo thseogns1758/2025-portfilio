@@ -1,5 +1,6 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import "./projectModal.css";
 
 const ProjectModal = ({
   children,
@@ -10,15 +11,20 @@ const ProjectModal = ({
   modalOpen: boolean;
   modalHandler: () => void;
 }) => {
+  React.useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") modalHandler();
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
   return (
     <div>
       {modalOpen && (
-        <div
-          className="bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 right-0 bottom-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full flex items-center justify-center"
-          onClick={modalHandler}
-        >
+        <div className="project-modal-container" onClick={modalHandler}>
           <div
-            className="relative rounded-lg p-6"
+            className="relative rounded-lg p-6 w-[100%] h-[80%]"
             onClick={(e) => e.stopPropagation()}
           >
             {children}
@@ -29,6 +35,10 @@ const ProjectModal = ({
           >
             <CloseIcon sx={{ color: "white" }} />
           </button>
+
+          <p className="close-text">
+            esc 또는 x 버튼을 눌러 모달을 닫을 수 있습니다.
+          </p>
         </div>
       )}
     </div>

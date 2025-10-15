@@ -17,7 +17,7 @@ const ProjectGrid = ({
 }) => {
   return (
     <Box>
-      <h1 className="text-3xl font-bold mb-6">Project</h1>
+      <h1 className="text-3xl font-bold mb-30">Project</h1>
 
       {isLoading ? (
         <Box m={2}>
@@ -30,7 +30,7 @@ const ProjectGrid = ({
         </Box>
       ) : (
         projects.map(({ year, list }) => (
-          <Box key={year} m={2}>
+          <Box key={year} m={2} mb={10}>
             <Typography variant="h5" fontWeight="bold" mb={2}>
               - {year} -
             </Typography>

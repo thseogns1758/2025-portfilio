@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { projects } from "../../data";
 import { ProjectItemType } from "../../type";
 import "./project-style.css";
@@ -8,7 +8,8 @@ import ProjectModal from "./components/ProjectModal";
 import ProjectGrid from "./components/projectGrid";
 import { Box } from "@mui/material";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
-
+import "./project-style.css";
+import Image from "next/image";
 const Project = () => {
   const [selectedProject, setSelectedProject] =
     useState<ProjectItemType | null>(null);
@@ -36,31 +37,26 @@ const Project = () => {
         modalHandler={() => modalCloseHandler()}
       >
         {selectedProject && (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row", // 기본 가로
-              backgroundColor: "#fff6f4",
-              padding: "20px",
-              borderRadius: "10px",
-              gap: "20px",
-              "@media (max-width:950px)": {
-                flexDirection: "column", // 950px 이하에서는 세로
-              },
-            }}
-          >
+          <Box className="project-modal-item">
             <Box
               sx={{
                 position: "relative",
                 borderRadius: "10px",
                 overflow: "hidden",
+
                 flex: 1,
               }}
             >
               <img
                 src={selectedProject.src}
                 alt={selectedProject.alt}
-                style={{ width: "100%", height: "auto", display: "block" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "block",
+                  objectFit: "contain",
+                  objectPosition: "center",
+                }}
               />
             </Box>
             <Box
@@ -68,6 +64,7 @@ const Project = () => {
                 flex: 1,
                 maxWidth: "300px",
                 paddingLeft: "20px",
+                position: "relative",
                 color: "#4b2e2e",
                 "@media (max-width:950px)": {
                   maxWidth: "100%",
@@ -79,9 +76,11 @@ const Project = () => {
               <h2 className="project-title">
                 {selectedProject.title.toUpperCase()}
               </h2>
-              <p className="project-description">
-                {selectedProject.description}
-              </p>
+              <Box className="project-description-container">
+                <p className="project-description">
+                  {selectedProject.description}
+                </p>
+              </Box>
 
               <a
                 className="project-link"
@@ -90,6 +89,19 @@ const Project = () => {
               >
                 링크로 이동하기 <InsertLinkIcon />
               </a>
+              {selectedProject.qrUrl !== "" && (
+                <img
+                  src={selectedProject.qrUrl}
+                  alt={selectedProject.alt}
+                  width={200}
+                  height={200}
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                  }}
+                />
+              )}
             </Box>
           </Box>
         )}
