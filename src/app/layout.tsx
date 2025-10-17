@@ -22,7 +22,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cactus+Classical+Serif&family=Nanum+Myeongjo:wght@400;700&family=Noto+Serif+Telugu:wght@100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cactus+Classical+Serif&family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+Linear+B&family=Noto+Serif+Telugu:wght@100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
           rel="stylesheet"
         />
       </head>
