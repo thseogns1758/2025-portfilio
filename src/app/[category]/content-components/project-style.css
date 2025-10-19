@@ -2,6 +2,7 @@
   transition: all 0.3s ease;
   overflow: hidden;
   border-radius: 10px;
+  cursor: pointer;
   border: 2px solid rgb(179, 41, 41);
 }
 .project-gridItem:hover {
@@ -36,7 +37,8 @@
   display: flex;
   flex-direction: row;
   background-color: #ffebeb;
-  padding: 20px;
+  position: relative;
+  padding: 30px;
   border-radius: 10px;
   gap: 20px;
   height: 100%;

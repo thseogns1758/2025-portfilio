@@ -25,7 +25,7 @@ const Project = () => {
     setOpenModal(false);
     setSelectedProject(null);
   };
-
+  console.log(selectedProject);
   return (
     <div>
       <ProjectGrid
@@ -43,20 +43,16 @@ const Project = () => {
                 position: "relative",
                 borderRadius: "10px",
                 overflow: "hidden",
-
+                minHeight: "400px",
                 flex: 1,
               }}
             >
-              <img
+              <Image
                 src={selectedProject.src}
                 alt={selectedProject.alt}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: "block",
-                  objectFit: "contain",
-                  objectPosition: "center",
-                }}
+                fill
+                objectFit="cover"
+                objectPosition="center"
               />
             </Box>
             <Box
@@ -90,15 +86,17 @@ const Project = () => {
                 링크로 이동하기 <InsertLinkIcon />
               </a>
               {selectedProject.qrUrl !== "" && (
-                <img
+                <Image
                   src={selectedProject.qrUrl}
                   alt={selectedProject.alt}
                   width={200}
                   height={200}
                   style={{
-                    position: "absolute",
-                    bottom: 0,
-                    right: 0,
+                    margin: "auto",
+                    marginTop: "20px",
+                  }}
+                  onError={() => {
+                    console.log("error");
                   }}
                 />
               )}

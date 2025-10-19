@@ -12,22 +12,31 @@ const ProjectModal = ({
   modalHandler: () => void;
 }) => {
   React.useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") modalHandler();
     };
     window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "unset";
+    };
+  }, [modalOpen, modalHandler]);
 
   return (
     <div>
       {modalOpen && (
-        <div className="project-modal-container" onClick={modalHandler}>
+        <div className="project-modal-background" onClick={modalHandler}>
           <div
-            className="relative rounded-lg p-6 w-[100%] h-[80%]"
+            className="project-modal-container"
             onClick={(e) => e.stopPropagation()}
           >
-            {children}
+            <div className="project-modal">{children}</div>
           </div>
           <button
             className="absolute top-4 right-4 cursor-pointer"
@@ -35,7 +44,6 @@ const ProjectModal = ({
           >
             <CloseIcon sx={{ color: "white" }} />
           </button>
-
           <p className="close-text">
             esc 또는 x 버튼을 눌러 모달을 닫을 수 있습니다.
           </p>

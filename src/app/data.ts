@@ -19,7 +19,7 @@ export const projects: ProjectType = [
         id: 2,
         url: "https://expo.dev/accounts/sondaehun/projects/minigame/builds/807cdccc-c9c6-49ca-b399-ed263fe360b6",
         qrUrl: "/images/gameQR.png",
-        src: "/images/game.png",
+        src: "/images/game-image.png",
         alt: "game",
         title: "game-project",
         description:
