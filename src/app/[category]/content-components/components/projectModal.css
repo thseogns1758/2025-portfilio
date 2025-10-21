@@ -1,4 +1,4 @@
-.project-modal-container {
+.project-modal-background {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
-.project-modal {
+.project-modal-container {
   position: relative;
   border-radius: 10px;
 
