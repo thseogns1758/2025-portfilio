@@ -35,7 +35,7 @@ export const projects: ProjectType = [
         alt: "yanolja",
         title: "yanolja-project",
         description:
-          "야놀자리서치페이지의 메인페이지를를 따라만든 토이프로젝트 입니다.",
+          "야놀자리서치페이지의 메인페이지를를 따라만든 토이프로젝트 입니다. 모바일 반응형 까지 구현하였습니다. 실제 데이터를 받았을 때를 구상하며 제작하였고 컴포넌트 재사용성을 고려하였습니다.",
       },
     ],
   },
