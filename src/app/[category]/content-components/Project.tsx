@@ -85,6 +85,15 @@ const Project = () => {
               >
                 링크로 이동하기 <InsertLinkIcon />
               </a>
+              {selectedProject.gitUrl && (
+                <a
+                  className="project-link"
+                  href={selectedProject.gitUrl}
+                  target="_blank"
+                >
+                  gitHub로 이동하기 <InsertLinkIcon />
+                </a>
+              )}
               {selectedProject.qrUrl !== "" && (
                 <Image
                   src={selectedProject.qrUrl}

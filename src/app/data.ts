@@ -9,6 +9,7 @@ export const projects: ProjectType = [
         id: 1,
         url: "https://sondhoon-portfolio.netlify.app/",
         qrUrl: "",
+        gitUrl: "https://github.com/thseogns1758/2025-portfilio",
         src: "/images/portfolio.png",
         alt: "portfolio",
         title: "portfolio",
@@ -24,6 +25,17 @@ export const projects: ProjectType = [
         title: "game-project",
         description:
           "ReactNative를 사용하여 제작한 게임 프로젝트입니다. 숫자를 랜덤으로 설정하고 그 숫자를 맞추게하는 로직을 구현했습니다. 게임이 끝나고나면 클리어까지 소요된 라운드와 정답을 알려줍니다.\n\n 아래 링크를 통해 다운받거나 QR코드를 통해 실행할 수 있습니다.",
+      },
+      {
+        id: 3,
+        url: "https://toy-yanolja.netlify.app/",
+        gitUrl: "https://github.com/thseogns1758/yanoljaProject",
+        qrUrl: "",
+        src: "/images/yanolja.png",
+        alt: "yanolja",
+        title: "yanolja-project",
+        description:
+          "야놀자리서치페이지의 메인페이지를를 따라만든 토이프로젝트 입니다.",
       },
     ],
   },
@@ -44,6 +56,7 @@ export const projects: ProjectType = [
         id: 2,
         url: "https://sondaehoonflix.netlify.app/",
         qrUrl: "",
+        gitUrl: "https://github.com/thseogns/fakeNetflix",
         src: "/images/netflix.png",
         alt: "netflix",
         title: "netflix-project",

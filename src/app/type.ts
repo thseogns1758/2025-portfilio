@@ -6,6 +6,7 @@ export type ProjectItemType = {
   title: string;
   description: string;
   qrUrl: string;
+  gitUrl?: string;
 };
 export type ProjectType = {
   year: string;
