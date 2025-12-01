@@ -2,6 +2,7 @@ import React from "react";
 import Chip from "./components/Chip";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import ImageWithSkeleton from "./components/ImageWithComponent";
 import "./about.css";
 
 const About = () => {
@@ -32,24 +33,40 @@ const About = () => {
   ];
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#f0f8ff", borderRadius: "16px" }}>
-      <Typography variant="h4" align="center" gutterBottom>
+    <Box
+      sx={{
+        p: 4,
+        backgroundColor: "rgba(255, 228, 212, 1)",
+        borderRadius: "16px",
+      }}
+    >
+      <Typography variant="h4" align="center" gutterBottom pt={8} pb={2}>
         About Me
       </Typography>
 
-      <Typography paragraph align="center">
+      <Typography paragraph align="center" pb={2}>
         저는 사용자 경험을 개선하고, 효율적인 코드를 고민하며 협업을 중시하는
         프론트엔드 개발자입니다.
       </Typography>
 
       <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid className="flex justify-center" size={{ xs: 12, md: 4 }}>
           <Box className="about-image-container" sx={{ textAlign: "center" }}>
-            <img
+            <ImageWithSkeleton
               src="/profile.jpeg"
               alt="Profile"
-              className="rounded-full"
-              style={{ width: 220, height: 220 }}
+              width={250}
+              height={250}
+              fill={false}
+              skeletonVariant="circular"
+              containerStyle={{
+                margin: "0 auto",
+                borderRadius: "50%",
+                overflow: "hidden",
+              }}
+              style={{
+                borderRadius: "50%",
+              }}
             />
           </Box>
         </Grid>
@@ -73,19 +90,7 @@ const About = () => {
       </Grid>
 
       <Grid container spacing={4} sx={{ mt: 4 }}>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Typography variant="h5" gutterBottom>
-            Skills
-          </Typography>
-
-          <Box className="grid grid-cols-2 gap-2">
-            {techStack.map((tech) => (
-              <Chip key={tech}>{tech}</Chip>
-            ))}
-          </Box>
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, md: 12 }}>
           <Typography variant="h5" gutterBottom>
             Experience
           </Typography>
@@ -97,6 +102,17 @@ const About = () => {
               </li>
             ))}
           </ul>
+        </Grid>
+        <Grid size={{ xs: 12, md: 12 }}>
+          <Typography variant="h5" gutterBottom>
+            Skills
+          </Typography>
+
+          <Box className="grid grid-cols-2 gap-2">
+            {techStack.map((tech) => (
+              <Chip key={tech}>{tech}</Chip>
+            ))}
+          </Box>
         </Grid>
       </Grid>
     </Box>

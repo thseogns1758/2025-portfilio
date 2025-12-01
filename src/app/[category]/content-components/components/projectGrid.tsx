@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
 import ProjectSkeleton from "./projectSkeleton";
+import ImageWithSkeleton from "./ImageWithComponent";
 import { ProjectItemType, ProjectType } from "../../../type";
 
 const ProjectGrid = ({
@@ -43,16 +44,18 @@ const ProjectGrid = ({
                   key={project.id}
                   onClick={() => projectClickHandler(project)}
                 >
-                  <Box sx={{ position: "relative" }}>
-                    <img
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      height: "200px",
+                    }}
+                  >
+                    {/* ImageWithSkeleton 컴포넌트 사용 */}
+                    <ImageWithSkeleton
                       src={project.src}
                       alt={project.alt}
-                      style={{
-                        width: "100%",
-                        height: 200,
-                        objectFit: "cover",
-                        display: "block",
-                      }}
+                      skeletonComponent={<ProjectSkeleton />}
                     />
                     <Box
                       p={2}

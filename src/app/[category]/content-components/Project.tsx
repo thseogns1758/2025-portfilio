@@ -9,7 +9,9 @@ import ProjectGrid from "./components/projectGrid";
 import { Box } from "@mui/material";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import "./project-style.css";
-import Image from "next/image";
+import ProjectSkeleton from "./components/projectSkeleton";
+import ImageWithSkeleton from "./components/ImageWithComponent";
+
 const Project = () => {
   const [selectedProject, setSelectedProject] =
     useState<ProjectItemType | null>(null);
@@ -25,7 +27,7 @@ const Project = () => {
     setOpenModal(false);
     setSelectedProject(null);
   };
-  console.log(selectedProject);
+
   return (
     <div>
       <ProjectGrid
@@ -38,6 +40,7 @@ const Project = () => {
       >
         {selectedProject && (
           <Box className="project-modal-item">
+            {/* 메인 이미지 */}
             <Box
               sx={{
                 position: "relative",
@@ -47,14 +50,17 @@ const Project = () => {
                 flex: 1,
               }}
             >
-              <Image
+              <ImageWithSkeleton
                 src={selectedProject.src}
                 alt={selectedProject.alt}
                 fill
-                objectFit="cover"
-                objectPosition="center"
+                containerStyle={{
+                  position: "initial",
+                }}
+                skeletonComponent={<ProjectSkeleton />}
               />
             </Box>
+
             <Box
               sx={{
                 flex: 1,
@@ -94,19 +100,23 @@ const Project = () => {
                   gitHub로 이동하기 <InsertLinkIcon />
                 </a>
               )}
+
+              {/* QR 코드 이미지 */}
               {selectedProject.qrUrl !== "" && (
-                <Image
+                <ImageWithSkeleton
                   src={selectedProject.qrUrl}
                   alt={selectedProject.alt}
                   width={200}
                   height={200}
-                  style={{
+                  containerStyle={{
                     margin: "auto",
                     marginTop: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                  onError={() => {
-                    console.log("error");
-                  }}
+                  fill={false}
+                  onError={() => console.log("error")}
                 />
               )}
             </Box>
