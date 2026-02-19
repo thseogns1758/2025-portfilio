@@ -4,27 +4,22 @@ import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ImageWithSkeleton from "./components/ImageWithComponent";
 import "./about.css";
+import { useMediaQuery } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const About = () => {
-  const techStack = [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "React Native",
-    "TailwindCSS",
-    "MUI",
-    "Styled-Components",
-  ];
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const techStack = ["React", "Next.js", "TS"];
 
-  const experience = [
-    "네오아리아에서 약 1년 4개월간 근무하며 한국관광콘텐츠랩 서비스의 유지보수와 신규 기능 개발을 담당했습니다. 메인 페이지를 비롯해 시즌2 페이지, 개발자센터, KTO-RMS 페이지 등 주요 화면을 개선하며 기존 코드의 구조를 정리하고 가독성과 유지보수성을 높이는 작업을 진행했습니다.",
+  // const experience = [
+  //   "네오아리아에서 약 1년 4개월간 근무하며 한국관광콘텐츠랩 서비스의 유지보수와 신규 기능 개발을 담당했습니다. 메인 페이지를 비롯해 시즌2 페이지, 개발자센터, KTO-RMS 페이지 등 주요 화면을 개선하며 기존 코드의 구조를 정리하고 가독성과 유지보수성을 높이는 작업을 진행했습니다.",
 
-    "콘텐츠랩 시즌2 페이지 개발 과정에서는 서비스 전반에서 반복적으로 사용되는 기능을 정리해 Video, Image, Modal 등 공용 컴포넌트를 설계·개발했으며, 이를 통해 화면 구성의 일관성을 유지하고 개발 효율을 개선했습니다. 이후 실제 서비스에서 사용 중인 컴포넌트를 패키징하여 npm에 배포함으로써 내부 사용자뿐만 아니라 콘텐츠랩 이용자들도 활용할 수 있도록 제공한 경험이 있습니다.",
+  //   "콘텐츠랩 시즌2 페이지 개발 과정에서는 서비스 전반에서 반복적으로 사용되는 기능을 정리해 Video, Image, Modal 등 공용 컴포넌트를 설계·개발했으며, 이를 통해 화면 구성의 일관성을 유지하고 개발 효율을 개선했습니다. 이후 실제 서비스에서 사용 중인 컴포넌트를 패키징하여 npm에 배포함으로써 내부 사용자뿐만 아니라 콘텐츠랩 이용자들도 활용할 수 있도록 제공한 경험이 있습니다.",
 
-    "또한 CA(conlab-analytics) 페이지를 제작하며 방문자 수와 사용자 콘텐츠 생성 데이터를 기반으로 다양한 차트를 구현했고, Kakao Map API를 연동해 콘텐츠를 지역별로 시각화하여 사용자 이해도를 높였습니다. 최신 관광 콘텐츠 페이지에서는 무한 스크롤과 Masonry 레이아웃을 적용해 콘텐츠 탐색 경험을 개선했으며, 이미지 로딩 성능을 높이기 위해 캐시 저장 방식을 활용하고 콘텐츠 클릭 시 노출되는 모달 UI를 직접 구현했습니다.",
+  //   "또한 CA(conlab-analytics) 페이지를 제작하며 방문자 수와 사용자 콘텐츠 생성 데이터를 기반으로 다양한 차트를 구현했고, Kakao Map API를 연동해 콘텐츠를 지역별로 시각화하여 사용자 이해도를 높였습니다. 최신 관광 콘텐츠 페이지에서는 무한 스크롤과 Masonry 레이아웃을 적용해 콘텐츠 탐색 경험을 개선했으며, 이미지 로딩 성능을 높이기 위해 캐시 저장 방식을 활용하고 콘텐츠 클릭 시 노출되는 모달 UI를 직접 구현했습니다.",
 
-    "이러한 경험을 통해 React와 Next.js 기반의 서비스 환경에서 성능과 가독성, 그리고 사용자 경험을 함께 고려하는 개발 방식을 익혔으며, Tailwind CSS 등 다양한 도구를 활용해 유지보수하기 쉬운 UI를 구현하는 데 집중해왔습니다.",
-  ];
+  //   "이러한 경험을 통해 React와 Next.js 기반의 서비스 환경에서 성능과 가독성, 그리고 사용자 경험을 함께 고려하는 개발 방식을 익혔으며, Tailwind CSS 등 다양한 도구를 활용해 유지보수하기 쉬운 UI를 구현하는 데 집중해왔습니다.",
+  // ];
 
   return (
     <Box
@@ -39,8 +34,8 @@ const About = () => {
       </Typography>
 
       <Typography paragraph align="center" pb={2}>
-        저는 사용자 경험을 개선하고, 효율적인 코드를 고민하며 협업을 중시하는
-        프론트엔드 개발자입니다.
+        프론트엔드 개발자
+        <br /> <strong>손대훈</strong>입니다.
       </Typography>
 
       <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
@@ -74,17 +69,25 @@ const About = () => {
 
           <Typography>Phone: 010-7599-1758</Typography>
 
-          <Typography>
-            GitHub:{" "}
-            <a href="https://github.com/thseogns1758">
-              https://github.com/thseogns1758
-            </a>
+          <Typography sx={{ display: "flex", alignItems: "center" }}>
+            GitHub:
+            <Box>
+              {isMobile ? (
+                <a href="https://github.com/thseogns1758" target="_blank">
+                  <GitHubIcon />
+                </a>
+              ) : (
+                <a href="https://github.com/thseogns1758" target="_blank">
+                  https://github.com/thseogns1758
+                </a>
+              )}
+            </Box>
           </Typography>
         </Grid>
       </Grid>
 
       <Grid container spacing={4} sx={{ mt: 4 }}>
-        <Grid size={{ xs: 12, md: 12 }}>
+        {/* <Grid size={{ xs: 12, md: 12 }}>
           <Typography variant="h5" gutterBottom>
             Experience
           </Typography>
@@ -96,7 +99,7 @@ const About = () => {
               </li>
             ))}
           </ul>
-        </Grid>
+        </Grid> */}
         <Grid size={{ xs: 12, md: 12 }}>
           <Typography variant="h5" gutterBottom>
             Skills
