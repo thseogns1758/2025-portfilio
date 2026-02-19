@@ -8,7 +8,6 @@ import ProjectModal from "./components/ProjectModal";
 import ProjectGrid from "./components/projectGrid";
 import { Box } from "@mui/material";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
-import "./project-style.css";
 import ProjectSkeleton from "./components/projectSkeleton";
 import ImageWithSkeleton from "./components/ImageWithComponent";
 
@@ -16,7 +15,6 @@ const Project = () => {
   const [selectedProject, setSelectedProject] =
     useState<ProjectItemType | null>(null);
   const [openModal, setOpenModal] = useState(false);
-  const [openDescription, setOpenDescription] = useState(false);
 
   const projectClickHandler = (project: ProjectItemType) => {
     setSelectedProject(project);

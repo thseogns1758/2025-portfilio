@@ -18,19 +18,19 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-3xl mx-auto px-2 sm:px-4">
       <div>
-        <h1 className=" font-bold mb-6">
+        <h1 className="font-bold mb-6 text-xl sm:text-2xl">
           문의하기 <br />
           (전달되는 메일의 경로는 thseo1758@naver.com입니다.)
         </h1>
       </div>
-      <form action={handleSubmit}>
+      <form action={handleSubmit} className="space-y-4">
         <div className="flex flex-col gap-4">
-          <div className="flex gap-2 h-[50px]">
+          <div className="flex flex-col sm:flex-row gap-2 sm:h-[50px]">
             <label
               htmlFor="name"
-              className="w-[100px]"
+              className="w-full sm:w-[100px]"
               style={{ lineHeight: "50px" }}
             >
               이름
@@ -44,10 +44,10 @@ const Form = () => {
               required
             />
           </div>
-          <div className="flex gap-2 h-[50px]">
+          <div className="flex flex-col sm:flex-row gap-2 sm:h-[50px]">
             <label
               htmlFor="email"
-              className="w-[100px]"
+              className="w-full sm:w-[100px]"
               style={{ lineHeight: "50px" }}
             >
               이메일
@@ -61,8 +61,8 @@ const Form = () => {
               required
             />
           </div>
-          <div className="flex gap-2">
-            <label htmlFor="subject" className="w-[100px] pt-2">
+          <div className="flex flex-col sm:flex-row gap-2">
+            <label htmlFor="subject" className="w-full sm:w-[100px] pt-2">
               문의 내용
             </label>
             <textarea
