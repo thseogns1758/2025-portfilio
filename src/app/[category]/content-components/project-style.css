@@ -13,25 +13,29 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  line-height: 1.3;
 }
 .project-description {
   font-size: 1rem;
   white-space: pre-line;
+  line-height: 1.55;
 }
 
 .project-link {
   margin-top: 16px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 8px;
-  padding: 8px;
+  padding: 10px 12px;
   justify-content: space-between;
   background-color: var(--link-back-color);
   color: white;
+  border-radius: 8px;
 }
 .project-description-container {
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 200px;
+  padding-right: 4px;
 }
 .project-modal-item {
   display: flex;
@@ -43,7 +47,29 @@
   gap: 20px;
   height: 100%;
   width: 100%;
-  @media (max-width: 950px) {
+}
+
+@media (max-width: 950px) {
+  .project-modal-item {
     flex-direction: column;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .project-description-container {
+    max-height: 150px;
+  }
+
+  .project-link {
+    font-size: 0.9rem;
   }
 }

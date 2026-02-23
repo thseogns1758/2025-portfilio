@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Skeleton } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 
 const projectSkeleton = () => {
   return (
