@@ -7,13 +7,13 @@ export const projects: ProjectType = [
     list: [
       {
         id: 1,
-        url: "https://cover-cloud.netlify.app",
+        url: "https://covercloud.kr",
         qrUrl: "",
         src: "/images/cover-cloud.png",
         alt: "cover-cloud",
         title: "cover-cloud",
         description:
-          "커버곡을 공유하는 음악 커뮤니티를 개발 중입니다. Spotify API를 연동해 곡 등록 시 공식 아티스트와 앨범 정보를 자동 조회하도록 구현했고, 인증은 Access Token을 헤더, Refresh Token을 HttpOnly 쿠키로 관리하며 토큰은 메모리에서만 유지합니다. 현재는 기능 구현을 마치고 예외 처리와 UX 개선을 진행 중 입니다.",
+          "커버곡을 공유하는 음악 커뮤니티를 개발 중입니다. Spotify API를 연동해 곡 등록 시 공식 아티스트와 앨범 정보를 자동 조회하도록 구현했고, 인증은 Access Token을 헤더, Refresh Token을 HttpOnly 쿠키로 관리하며 토큰은 메모리에서만 유지합니다. 현재개발을 마치고QA를 진행 중입니다.",
       },
     ],
   },
