@@ -1,4 +1,3 @@
-import src from "@emotion/styled";
 import { ProjectType } from "./type";
 
 export const projects: ProjectType = [
